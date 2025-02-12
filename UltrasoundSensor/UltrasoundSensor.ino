@@ -22,5 +22,14 @@ void loop() {
   digitalWrite(trigPin, LOW);
 
   duration = pulseIn(echoPin, HIGH);
+
+  distanceCm = duration * (0.0343/2); // speed of sound in cm/us
+  distanceInch = duration * (0.013504/2); // speed of sound in in/us
+  Serial.print("Distance: ");
+  Serial.print(distanceCm);
+  Serial.print(" cm/");
+  Serial.print(distanceInch);
+  Serial.println(" in");
+  delay(1000);
   
 }
